@@ -1,0 +1,84 @@
+body {
+  /* background-color: black; */
+  font-size: 16px;
+  margin: 0;
+}
+
+header {
+  background-color: black;
+  color: white;
+  height: 55px;
+  padding: 14px 28px 0;
+  position: relative;
+  z-index: 1;
+}
+
+header div {
+  float: right;
+}
+
+header img {
+  height: 32px;
+}
+
+header a {
+  color: red;
+  line-height: 32px;
+  text-decoration: none;
+  vertical-align: top;
+}
+
+header input {
+  background-color: black;
+  color: white;
+  width: 250px;
+  vertical-align: top;
+  padding: 6px;
+  margin-top: 2px;
+  margin-right: 28px;
+}
+
+header span {
+  vertical-align: top;
+  line-height: 32px;
+}
+
+.logo {
+  margin-right: 32px;
+}
+
+section {
+  background-color: black;
+  color: white;
+  padding: 14px 28px;
+}
+
+.titulo {
+  width: 430px;
+}
+
+section p {
+  /* 1em = 16px */
+  font-size: 1.4em;
+  opacity: .8;
+  width: 450px;
+}
+
+section a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  right: 0; 
+}
+
+.info {
+  position: relative;
+  z-index: 1;
+}
+
+
