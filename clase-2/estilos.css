@@ -1,0 +1,140 @@
+body {
+  /* background-color: black; */
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 950px;
+  position: relative;
+}
+
+header {
+  background-color: black;
+  color: white;
+  height: 55px;
+  padding: 14px 28px 0;
+  position: relative;
+  z-index: 1;
+}
+
+header div {
+  float: right;
+}
+
+header img {
+  height: 32px;
+}
+
+header a {
+  color: red;
+  line-height: 32px;
+  text-decoration: none;
+  vertical-align: top;
+}
+
+header input {
+  background-color: black;
+  color: white;
+  width: 250px;
+  vertical-align: top;
+  padding: 6px;
+  margin-top: 2px;
+  margin-right: 28px;
+}
+
+header span {
+  vertical-align: top;
+  line-height: 32px;
+}
+
+.logo {
+  margin-right: 32px;
+}
+
+.destacado {
+  background-color: black;
+  color: white;
+}
+
+.titulo {
+  width: 430px;
+}
+
+.destacado p {
+  /* 1em = 16px */
+  font-size: 1.4em;
+  opacity: .8;
+  width: 450px;
+}
+
+.destacado a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 800px;
+}
+
+.info {
+  position: relative;
+  z-index: 1;
+}
+
+.series {
+  background-color: #141414;
+}
+
+.series img {
+  width: 210px;
+}
+
+.series, .destacado {
+  padding: 14px 28px;
+}
+
+.series h2 {
+  color: white;
+  opacity: .8;
+}
+
+@media screen and (max-width: 768px) {
+  .series img {
+    width: 150px;
+  }
+  header input {
+    display: none;
+  }
+  .titulo {
+    width: 300px;
+  }
+  .background {
+    width: 680px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  header a, header div {
+    display: none;
+  }
+  .destacado p {
+    font-size: 16px;
+    width: 250px;
+  }
+  .background {
+    width: 650px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
