@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
     <script src="javascript/app.js"></script>
   </head>
-  <body>
+  <body ng-controller="MainController as main">
     <header>
       <img class="logo" src="images/logo.png" alt="Devflix, el sitio de tus series favoritas"/>
       <a href="#">Explorar <i class="fa fa-caret-down"></i></a>
@@ -20,26 +20,22 @@
         <i class="fa fa-caret-down"></i>
       </div>
     </header>
-    <section class="vista-previa" ng-controller="SerieController as pelicula">
+    <section class="vista-previa" ng-controller="SerieController as serieCtrl">
       <div class="background-info">
-        <img class="titulo" src="images/ouija.png"/>
-        <span>2015</span>
-        <span>NR</span>
-        <span>1h 24m</span>
-        <p>{{ pelicula.mensaje }}</p>
-        <i class="fa fa-plus-circle"></i>
-        <a href="#">Mi lista</a>
+        <img class="titulo" ng-src="images/{{ serieCtrl.pelicula.titulo | lowercase }}.png"/>
+        <span>{{ serieCtrl.pelicula.estreno }}</span>
+        <span>{{ serieCtrl.pelicula.tag }}</span>
+        <span>{{ serieCtrl.pelicula.duracion }}</span>
+        <p>{{ serieCtrl.pelicula.descripcion | uppercase }}</p>
+        <i class="fa fa-plus-circle" ng-show="!main.anadido"></i>
+        <i class="fa fa-check" ng-show="main.anadido"></i>
+        <a href="#" ng-click="main.anadir()">Mi lista</a>
       </div>
-      <img class="background" src="images/ouija-background.jpg"/>
+      <img class="background" ng-src="images/{{ serieCtrl.pelicula.titulo }}-background.jpg"/>
     </section>
     <section class="series">
       <h2>Agregados recientemente</h2>
-      <img src="images/series/bates-motel.jpg" alt="">
-      <img src="images/series/better-call-saul.jpg" alt="">
-      <img src="images/series/breaking-bad.jpg" alt="">
-      <img src="images/series/dexter.jpg" alt="">
-      <img src="images/series/downton-abbey.jpg" alt="">
-      <img src="images/series/dr-house.jpg" alt="">
+      <img ng-repeat="item in main.agregados | limitTo: 2" ng-src="images/series/{{ item }}.jpg" alt="" />
       <h2>Tendencias</h2>
       <img src="images/series/el-senor-de-los-cielos.jpg" alt="">
       <img src="images/series/friends.jpg" alt="">
