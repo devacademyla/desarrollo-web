@@ -1,0 +1,17 @@
+<section class="vista-previa" ng-controller="SerieController as serieCtrl">
+  <div class="background-info">
+    <img class="titulo" ng-src="images/{{ serieCtrl.pelicula.titulo | lowercase }}.png"/>
+    <span>{{ serieCtrl.pelicula.estreno }}</span>
+    <span>{{ serieCtrl.pelicula.tag }}</span>
+    <span>{{ serieCtrl.pelicula.duracion }}</span>
+    <p>{{ serieCtrl.pelicula.descripcion | uppercase }}</p>
+    <i class="fa fa-plus-circle" ng-show="!main.anadido"></i>
+    <i class="fa fa-check" ng-show="main.anadido"></i>
+    <a href="#" ng-click="main.anadir()">Mi lista</a>
+  </div>
+  <img class="background" ng-src="images/{{ serieCtrl.pelicula.titulo }}-background.jpg"/>
+</section>
+<section class="series">
+  <h2>Agregados recientemente</h2>
+  <img ng-repeat="serie in series" ng-src="images/series/{{ serie.slug }}.jpg" alt="" />
+</section>
