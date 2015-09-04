@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="Devflix">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>DevFlix</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="javascript/app.js"></script>
+  </head>
+  <body ng-controller="MainController as main">
+    <header>
+      <a href="index.html">
+        <img class="logo" src="images/logo.png" alt="Devflix, el sitio de tus series favoritas"/>
+      </a>
+      <a href="contacto.html">Contacto</a>
+      <div>
+        <input type="text" placeholder="Buscar títulos, personas, géneros" />
+        <i class="fa fa-bell"></i>
+        <img class="perfil" src="images/bryam.jpg">
+        <span>Bryam</span>
+        <i class="fa fa-caret-down"></i>
+      </div>
+    </header>
+    <section class="vista-previa" ng-controller="SerieController as serieCtrl">
+      <div class="background-info">
+        <img class="titulo" ng-src="images/{{ serieCtrl.pelicula.titulo | lowercase }}.png"/>
+        <span>{{ serieCtrl.pelicula.estreno }}</span>
+        <span>{{ serieCtrl.pelicula.tag }}</span>
+        <span>{{ serieCtrl.pelicula.duracion }}</span>
+        <p>{{ serieCtrl.pelicula.descripcion | uppercase }}</p>
+        <i class="fa fa-plus-circle" ng-show="!main.anadido"></i>
+        <i class="fa fa-check" ng-show="main.anadido"></i>
+        <a href="#" ng-click="main.anadir()">Mi lista</a>
+      </div>
+      <img class="background" ng-src="images/{{ serieCtrl.pelicula.titulo }}-background.jpg"/>
+    </section>
+    <section class="series">
+      <h2>Agregados recientemente</h2>
+      <img ng-repeat="item in main.agregados | limitTo: 2" ng-src="images/series/{{ item }}.jpg" alt="" />
+      <h2>Tendencias</h2>
+      <img src="images/series/el-senor-de-los-cielos.jpg" alt="">
+      <img src="images/series/friends.jpg" alt="">
+      <img src="images/series/gossip-girl.jpg" alt="">
+      <img src="images/series/homeland.jpg" alt="">
+      <img src="images/series/house-of-cards.jpg" alt="">
+      <img src="images/series/how-i-met-your-mother.jpg" alt="">
+      <h2>Populares en Devflix</h2>
+      <img src="images/series/lost.jpg" alt="">
+      <img src="images/series/marco-polo.jpg" alt="">
+      <img src="images/series/modern-family.jpg" alt="">
+      <img src="images/series/prison-break.jpg" alt="">
+      <img src="images/series/sherlock.jpg" alt="">
+      <img src="images/series/skins.jpg" alt="">
+    </section>
+  </body>
+</html>
