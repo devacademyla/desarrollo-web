@@ -1,0 +1,7 @@
+<h1>Usuarios</h1>
+<ul>
+  <% @usuarios.each do |usuario| %>
+    <li><%= link_to usuario.nombre, usuario, id: 'clase' %></li>
+  <% end %>
+</ul>
+<%= link_to 'Nuevo usuario', new_usuario_path %>

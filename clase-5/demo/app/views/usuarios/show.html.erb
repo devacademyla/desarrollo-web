@@ -1,0 +1,11 @@
+<p>
+  <b>Nombre:</b>
+  <%= @usuario.nombre %>
+</p>
+<p>
+  <b>Edad:</b>
+  <%= @usuario.edad %>
+</p>
+
+<%= link_to 'Editar', edit_usuario_path %>
+<%= link_to 'Eliminar', usuario_path, method: :delete %>

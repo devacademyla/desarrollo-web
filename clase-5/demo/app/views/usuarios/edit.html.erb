@@ -1,0 +1,9 @@
+<%= form_for(@usuario) do |f| %>
+  <label for="">Nombre</label>
+  <%= f.text_field :nombre %>
+
+  <%= f.label :edad %>
+  <%= f.text_field :edad %>
+
+  <%= f.submit 'Actualizar' %>
+<% end %>
